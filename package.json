@@ -19,7 +19,7 @@
   },
   "lint-staged": {
     "linters": {
-      "*.{js}": [
+      "*.{js,jsx}": [
         "npm run test",
         "prettier --single-quote --no-semi --trailing-comma all --bracket-spacing false --print-width 100 --write",
         "git add"
@@ -39,6 +39,7 @@
   "author": "Jesse Ditson <jesse@attic.io>",
   "private": true,
   "devDependencies": {
+    "babel-plugin-inline-react-svg": "^0.4.0",
     "eslint-config-prettier": "^2.4.0",
     "eslint-plugin-react": "^7.3.0",
     "husky": "^0.14.3",
