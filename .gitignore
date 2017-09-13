@@ -1,0 +1,11 @@
+# build output
+build
+
+# dependencies
+node_modules
+
+# logs
+npm-debug.log
+
+# OS
+.DS_Store
