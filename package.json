@@ -29,11 +29,12 @@
   "xo": {
     "extends": ["prettier"],
     "env": ["browser", "node"],
-    "plugins": ["react"],
+    "plugins": ["react", "unicorn"],
     "rules": {
       "no-warning-comments": 1,
       "react/jsx-uses-react": "error",
-      "react/jsx-uses-vars": "error"
+      "react/jsx-uses-vars": "error",
+      "unicorn/filename-case": "off"
     }
   },
   "author": "Jesse Ditson <jesse@attic.io>",
