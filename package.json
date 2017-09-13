@@ -7,8 +7,8 @@
     "dev": "next",
     "clean": "rm -rf out",
     "precommit": "lint-staged",
-    "prerelease": "npm run clean && NODE_ENV=production next build",
-    "release": "next export && now",
+    "prepublish": "npm run clean && NODE_ENV=production next build",
+    "publish": "next export && now",
     "test": "xo"
   },
   "now": {
