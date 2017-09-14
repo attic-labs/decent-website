@@ -13,7 +13,6 @@ export default ({top}) => {
   const completion = Math.max((top - min) / (height - min), 0)
   // Interpolate value between 1 and MIN_OPACITY
   const opacity = 1 - (1 - MIN_OPACITY) * completion
-  console.log(completion, opacity)
   return (
     <section id="jumbo">
       <div style={{opacity, marginBottom: `-${top * 0.6}px`}} className="foreground">
