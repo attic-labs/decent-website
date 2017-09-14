@@ -25,7 +25,7 @@ export default class extends Component {
     return (
       <main>
         <Head>
-          <title>Noms</title>
+          <title>noms</title>
           <link
             href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
             rel="stylesheet"
@@ -107,6 +107,9 @@ export default class extends Component {
             </a>
           </div>
         </section>
+        <span className="footer">
+          © 2017 Attic Labs, Inc. • <a href="https://attic.io">About us</a>
+        </span>
         <style jsx>{`
           main {
             min-height: 100%;
@@ -151,6 +154,13 @@ export default class extends Component {
           .bottom-cta span {
             margin-bottom: 2rem;
             font-size: .8em;
+          }
+          .footer {
+            padding: 1rem;
+            font-size: 0.8rem;
+            text-align: center;
+            width: 100%;
+            display: block;
           }
         `}</style>
         <style jsx global>{`
