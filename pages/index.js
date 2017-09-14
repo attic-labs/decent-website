@@ -88,7 +88,7 @@ export default class extends Component {
           <div className="video-container">
             <iframe
               className="video"
-              src="https://www.youtube.com/embed/JCRQslvh2fE?rel=0&amp;controls=0&amp;showinfo=0"
+              src="https://www.youtube.com/embed/KjFqW9sLQYg?rel=0&amp;showinfo=0"
               frameBorder="0"
               allowFullScreen
             />
