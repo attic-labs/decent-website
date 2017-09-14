@@ -7,10 +7,7 @@ export default ({top}) => {
       <img style={{opacity}} src="/static/logo.png" className="logo" />
       <div style={{opacity}} className="content">
         <h1>noms is the first database for the decentralized web</h1>
-        <span>
-          <strong>noms</strong> makes it easy to build rich, collaborative, multi-user,
-          decentralized applications.
-        </span>
+        <span>Easily build rich, collaborative, multi-user, fully-decentralized applications.</span>
         <div className="buttons">
           <a href="https://github.com/attic-labs/noms">
             <Button>Find out more</Button>
