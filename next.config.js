@@ -1,3 +1,5 @@
+const isProd = process.env.NODE_ENV === 'production'
+
 module.exports = {
   async exportPathMap() {
     const pages = []
@@ -6,4 +8,5 @@ module.exports = {
       '/': {page: '/'},
     })
   },
+  assetPrefix: isProd ? '/decent' : '',
 }
