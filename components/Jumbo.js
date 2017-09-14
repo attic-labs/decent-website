@@ -1,33 +1,54 @@
 import Button from './Button'
 
+const MIN_OPACITY = 0.1
+const OPACITY_START = 0.4
+
 export default ({top}) => {
-  const opacity = 1 - top / 800
+  const height =
+    typeof document === 'undefined'
+      ? 400
+      : document.getElementById('jumbo').getBoundingClientRect().height
+  // Start fade at OPACITY_START % of total height
+  const min = height * OPACITY_START
+  const completion = Math.max((top - min) / (height - min), 0)
+  // Interpolate value between 1 and MIN_OPACITY
+  const opacity = 1 - (1 - MIN_OPACITY) * completion
+  console.log(completion, opacity)
   return (
-    <section style={{top: `-${top * 0.6}px`}} id="jumbo">
-      <img style={{opacity}} src="/static/logo.png" className="logo" />
-      <div style={{opacity}} className="content">
-        <h1>noms is the first database for the decentralized web</h1>
-        <span>Easily build rich, collaborative, multi-user, fully-decentralized applications.</span>
-        <div className="buttons">
-          <a href="https://github.com/attic-labs/noms">
-            <Button>Find out more</Button>
-          </a>
-          <a href="http://slack.noms.io">
-            <Button>Get in touch</Button>
-          </a>
+    <section id="jumbo">
+      <div style={{opacity, marginBottom: `-${top * 0.6}px`}} className="foreground">
+        <img src="/static/logo.png" className="logo" />
+        <div className="content">
+          <h1>noms is the first database for the decentralized web</h1>
+          <span>
+            Easily build rich, collaborative, multi-user, fully-decentralized applications.
+          </span>
+          <div className="buttons">
+            <a href="https://github.com/attic-labs/noms">
+              <Button>Find out more</Button>
+            </a>
+            <a href="http://slack.noms.io">
+              <Button>Get in touch</Button>
+            </a>
+          </div>
         </div>
       </div>
       <style jsx>{`
         #jumbo {
-          position: fixed;
           width: 100%;
           min-height: 60vh;
           background: url('/static/felt.png') fixed;
+          padding: 1rem;
           display: flex;
           justify-content: center;
           align-items: center;
           flex-wrap: wrap;
-          padding: 1rem;
+        }
+        .foreground {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
         }
         .logo {
           background-size: contain;
