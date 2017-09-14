@@ -89,6 +89,7 @@ export default ({top}) => {
         @media (max-width: 600px) {
           .content {
             min-width: 200px;
+            width: 60vw;
           }
           .content h1 {
             font-size: 1.6rem;
