@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import Button from './Button'
 
 export default ({top}) => {
@@ -9,15 +8,16 @@ export default ({top}) => {
       <div style={{opacity}} className="content">
         <h1>noms is the first database for the decentralized web</h1>
         <span>
-          noms makes it easy to build rich, collaborative, multi-user, decentralized applications.
+          <strong>noms</strong> makes it easy to build rich, collaborative, multi-user,
+          decentralized applications.
         </span>
         <div className="buttons">
-          <Link href={'/'}>
+          <a href="https://github.com/attic-labs/noms">
             <Button>Find out more</Button>
-          </Link>
-          <Link href={'/'}>
+          </a>
+          <a href="http://slack.noms.io">
             <Button>Get in touch</Button>
-          </Link>
+          </a>
         </div>
       </div>
       <style jsx>{`
@@ -45,37 +45,41 @@ export default ({top}) => {
           margin: 0 5vw;
         }
         .content h1 {
-          font-weight: 400;
-          font-size: 2rem;
+          font-weight: 100;
+          line-height: 65px;
+          font-size: 48px;
+          text-shadow: 0px 1px 2px black;
+          margin: 24px 0;
         }
         .content span {
           font-weight: 200;
-          font-size: .8rem;
+          font-size: 14px;
+          text-shadow: 0px 1px 2px black;
         }
         .buttons {
-          margin-top: 2rem;
+          margin-top: 48px;
           display: flex;
           flex-wrap: wrap;
         }
-        :global(.buttons button) {
+        :global(.buttons a) {
           margin-right: 2rem;
           margin-bottom: 2rem;
         }
-        :global(.buttons button:last-child) {
+        :global(.buttons a:last-child) {
           margin-right: 0rem;
         }
         @media (max-width: 600px) {
           .content {
             min-width: 200px;
-            text-align: center;
           }
           .content h1 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
+            line-height: 2rem;
           }
           .buttons {
             justify-content: center;
           }
-          :global(.buttons button) {
+          :global(.buttons a) {
             margin-right: 0;
           }
         }
