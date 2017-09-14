@@ -1,5 +1,4 @@
 import {colors} from '../styles'
-import Link from 'next/link'
 
 const styles = orange => {
   return orange
@@ -23,7 +22,7 @@ export default ({orange, children}) =>
         border-radius: 2px;
         color: white;
         white-space: nowrap;
-        font-size: 0.8em;
+        font-size: 14px;
       }
     `}</style>
   </button>

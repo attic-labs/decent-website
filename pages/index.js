@@ -1,6 +1,5 @@
 import {Component} from 'react'
 import Head from 'next/head'
-import Link from 'next/link'
 import Button from '../components/Button'
 import Jumbo from '../components/Jumbo'
 import Features from '../components/Features'
@@ -31,6 +30,58 @@ export default class extends Component {
             href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
             rel="stylesheet"
           />
+          <link
+            rel="apple-touch-icon-precomposed"
+            sizes="57x57"
+            href="static/apple-touch-icon-57x57.png"
+          />
+          <link
+            rel="apple-touch-icon-precomposed"
+            sizes="114x114"
+            href="static/apple-touch-icon-114x114.png"
+          />
+          <link
+            rel="apple-touch-icon-precomposed"
+            sizes="72x72"
+            href="static/apple-touch-icon-72x72.png"
+          />
+          <link
+            rel="apple-touch-icon-precomposed"
+            sizes="144x144"
+            href="static/apple-touch-icon-144x144.png"
+          />
+          <link
+            rel="apple-touch-icon-precomposed"
+            sizes="60x60"
+            href="static/apple-touch-icon-60x60.png"
+          />
+          <link
+            rel="apple-touch-icon-precomposed"
+            sizes="120x120"
+            href="static/apple-touch-icon-120x120.png"
+          />
+          <link
+            rel="apple-touch-icon-precomposed"
+            sizes="76x76"
+            href="static/apple-touch-icon-76x76.png"
+          />
+          <link
+            rel="apple-touch-icon-precomposed"
+            sizes="152x152"
+            href="static/apple-touch-icon-152x152.png"
+          />
+          <link rel="icon" type="image/png" href="static/favicon-196x196.png" sizes="196x196" />
+          <link rel="icon" type="image/png" href="static/favicon-96x96.png" sizes="96x96" />
+          <link rel="icon" type="image/png" href="static/favicon-32x32.png" sizes="32x32" />
+          <link rel="icon" type="image/png" href="static/favicon-16x16.png" sizes="16x16" />
+          <link rel="icon" type="image/png" href="static/favicon-128.png" sizes="128x128" />
+          <meta name="application-name" content="noms" />
+          <meta name="msapplication-TileColor" content="#292929" />
+          <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+          <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+          <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+          <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+          <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
         </Head>
         <Jumbo top={pageY} />
         <section className="content">
@@ -45,12 +96,15 @@ export default class extends Component {
           <Features />
           <div className="bottom-cta">
             <span>
-              We are actively seeking people who might like to try noms. If you think noms might be
-              a good fit for your project, <a href="mailto:noms@attic.io">please get in touch.</a>
+              We are actively seeking people who might like to try <strong>noms</strong>. If you
+              think <strong>noms</strong> might be a good fit for your project,{' '}
+              <a href="http://slack.noms.io">please get in touch.</a>
             </span>
-            <Link href={'/'}>
-              <Button orange>I'd like to try noms!</Button>
-            </Link>
+            <a href="https://github.com/attic-labs/noms">
+              <Button orange>
+                Read more about <strong>noms</strong>
+              </Button>
+            </a>
           </div>
         </section>
         <style jsx>{`
