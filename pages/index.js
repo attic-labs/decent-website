@@ -82,6 +82,7 @@ export default class extends Component {
           <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
           <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
           <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>
         <Jumbo top={pageY} />
         <section className="content">
@@ -118,7 +119,6 @@ export default class extends Component {
             position: relative;
             background-color: white;
             padding: 3rem 20vw;
-            margin-top: 60vh;
             left: 0;
             right: 0;
             display: flex;
