@@ -9,7 +9,7 @@ export default ({top}) => {
       <div style={{opacity}} className="content">
         <h1>noms is the first database for the decentralized web</h1>
         <span>
-          noms makes it easy to build rich, collaborative, multi-user, decentralized applications.
+          Easily build rich, collaborative, multi-user, fully-decentralized applications.
         </span>
         <div className="buttons">
           <Link href={'/'}>
