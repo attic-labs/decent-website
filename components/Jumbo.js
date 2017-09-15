@@ -18,12 +18,12 @@ export default ({top}) => {
       <div style={{opacity, marginBottom: `-${top * 0.6}px`}} className="foreground">
         <img src="/static/logo.png" className="logo" />
         <div className="content">
-          <h1>noms is the first database for the decentralized web</h1>
+          <h1>The first database for the decentralized web</h1>
           <span>
             Easily build rich, collaborative, multi-user, fully-decentralized applications.
           </span>
           <div className="buttons">
-            <a href="https://github.com/attic-labs/noms">
+            <a href="https://github.com/attic-labs/noms/blob/master/doc/decent/how-to-use-noms.md">
               <Button>Find out more</Button>
             </a>
             <a href="http://slack.noms.io">

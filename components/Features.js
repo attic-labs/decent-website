@@ -4,7 +4,7 @@ import Multiuser from '../svg/multiuser.svg'
 import DynamicLoading from '../svg/dynamic-loading.svg'
 import Search from '../svg/search.svg'
 
-export default ({top}) =>
+export default () =>
   <section>
     <div className="row">
       <div className="feature">
@@ -19,21 +19,21 @@ export default ({top}) =>
         <Multiuser height="60" />
         <h5>Multiuser</h5>
         <span>
-          The first general solution for multiuser decentralized applications - aggregate data
-          across users, build indices, etc.
+          The first general solution for multiuser decentralized applications—aggregate data across
+          users, build indices, etc.
         </span>
       </div>
     </div>
     <div className="row">
       <div className="feature">
         <DynamicLoading height="60" />
-        <h5>Dynamic Loading</h5>
-        <span>Data can be loaded dynamically as needed from the rest of the network.</span>
+        <h5>Lazy loading</h5>
+        <span>Data is dynamically loaded from peers as needed with intelligent local caching.</span>
       </div>
       <div className="feature">
         <Search height="60" />
         <h5>Search</h5>
-        <span>Efficient search, even across the network.</span>
+        <span>Efficiently search large datasets, even across the network.</span>
       </div>
     </div>
     <style jsx>{`

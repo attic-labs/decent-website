@@ -23,6 +23,7 @@ export default ({orange, children}) =>
         color: white;
         white-space: nowrap;
         font-size: 14px;
+        cursor: pointer;
       }
     `}</style>
   </button>

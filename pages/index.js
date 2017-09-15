@@ -97,8 +97,7 @@ export default class extends Component {
           <Features />
           <div className="bottom-cta">
             <span>
-              We are actively seeking people who might like to try <strong>noms</strong>. If you
-              think <strong>noms</strong> might be a good fit for your project,{' '}
+              We are actively seeking people who might like to try noms. If that's you,{' '}
               <a href="http://slack.noms.io">please get in touch.</a>
             </span>
             <a href="https://github.com/attic-labs/noms">
