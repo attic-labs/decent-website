@@ -1,14 +1,18 @@
 import {colors} from '../styles'
-import Sync from '../svg/sync.svg'
+
 import Multiuser from '../svg/multiuser.svg'
 import DynamicLoading from '../svg/dynamic-loading.svg'
 import Search from '../svg/search.svg'
+
+import Animation from './Animation'
 
 export default () =>
   <section>
     <div className="row">
       <div className="feature">
-        <Sync height="60" />
+        <div className="icon">
+          <Animation name="sync" />
+        </div>
         <h5>Multiparty sync</h5>
         <span>
           Correct, efficient, multiparty sync that scales to any number of nodes. Membership is
@@ -48,6 +52,9 @@ export default () =>
         margin-bottom: 2em;
         flex-wrap: wrap;
         width: 100%;
+      }
+      .icon {
+        height: 60px;
       }
       .feature {
         display: flex;

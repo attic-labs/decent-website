@@ -31,6 +31,7 @@
     "extends": ["prettier"],
     "env": ["browser", "node"],
     "plugins": ["react", "unicorn"],
+    "parser": "babel-eslint",
     "rules": {
       "no-warning-comments": 1,
       "react/jsx-uses-react": "error",
@@ -41,7 +42,9 @@
   "author": "Jesse Ditson <jesse@attic.io>",
   "private": true,
   "devDependencies": {
+    "babel-eslint": "^8.0.0",
     "babel-plugin-inline-react-svg": "^0.4.0",
+    "bodymovin": "^4.10.2",
     "eslint-config-prettier": "^2.4.0",
     "eslint-plugin-react": "^7.3.0",
     "html-loader": "^0.5.1",
@@ -52,6 +55,7 @@
     "nodegit": "^0.20.2",
     "now": "^8.2.5",
     "prettier": "1.5.3",
+    "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "showdown": "^1.7.4",
