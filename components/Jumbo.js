@@ -16,7 +16,7 @@ export default ({top}) => {
   return (
     <section id="jumbo">
       <div style={{opacity, marginBottom: `-${top * 0.6}px`}} className="foreground">
-        <img src="/static/logo.png" className="logo" />
+        <img src="static/logo.png" className="logo" />
         <div className="content">
           <h1>The first database for the decentralized web</h1>
           <span>
@@ -36,7 +36,7 @@ export default ({top}) => {
         #jumbo {
           width: 100%;
           min-height: 60vh;
-          background: url('/static/felt.png') fixed;
+          background: url('static/felt.png') fixed;
           padding: 1rem;
           display: flex;
           justify-content: center;
