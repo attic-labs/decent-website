@@ -1,34 +1,45 @@
 const pageMap = require('../page-map')
 
-const pageIndex = pageMap.reduce((o, p) => {
-  o[p.src] = p.path
-  return o
-}, {})
+function flatten(l, o) {
+  return l.reduce((o, p) => {
+    if (p.children) {
+      return flatten(p.children, o)
+    }
+    o[p.src] = p.path
+    return o
+  }, o || {})
+}
 
-const mapToLocal = (_, $1, $2) => {
+const pageIndex = flatten(pageMap)
+
+const mapToLocal = (full, src, hash) => {
   if (process.env.NODE_ENV !== 'production') {
-    return `/doc?src=${$1}${$2}`
+    if (!pageIndex[src]) {
+      console.error(`Attempted to replace invalid link: ${src}`)
+      return full
+    }
+    return `(/doc?src=${src}${hash})`
   }
-  return `/docs/${pageIndex[$1]}${$2}`
+  return `(/docs/${pageIndex[src]}${hash})`
 }
 
 const linkMap = [
   {
-    pattern: /https?:\/\/github.com\/attic-labs\/noms\/blob\/master\/(doc\/[^#?]+)([^"']*)/gi,
+    pattern: /\(https?:\/\/github.com\/attic-labs\/noms\/blob\/master\/(doc\/[^#?]+?\.md)([^)]*?)\)/gi,
     replacement: mapToLocal,
   },
   {
-    pattern: /(doc\/.+\.md)([^"']*)/gi,
+    pattern: /\((doc\/[^#?]+?\.md)([^)]*?)\)/gi,
     replacement: mapToLocal,
   },
 ]
 
 module.exports = function(source) {
-  this.cacheable()
   linkMap.forEach(l => {
     let m
-    while ((m = l.pattern.exec(source)) !== null) {
-      source = source.replace(m[0], l.replacement(...m))
+    const p = l.pattern
+    while ((m = p.exec(source)) !== null) {
+      source = source.replace(m[0], l.replacement.apply(this, m))
     }
   })
   return source

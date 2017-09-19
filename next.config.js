@@ -26,10 +26,10 @@ module.exports = {
           },
         },
         {
-          loader: 'link-map-loader',
+          loader: 'showdown-loader',
         },
         {
-          loader: 'showdown-loader',
+          loader: 'link-map-loader',
         },
       ],
     })
