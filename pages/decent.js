@@ -4,7 +4,7 @@ import Jumbo from '../components/Jumbo'
 import Features from '../components/Features'
 import DocsLink from '../components/DocsLink'
 
-class Home extends Component {
+class Decent extends Component {
   constructor() {
     super()
     this.state = {pageY: 0}
@@ -105,4 +105,4 @@ class Home extends Component {
   }
 }
 
-export default layout(Home)
+export default layout(Decent)

@@ -3,10 +3,17 @@ import layout from '../hocs/layout'
 import withDocsSidebar from '../hocs/with-docs-sidebar'
 import pageMap from '../page-map'
 
-const pages = pageMap.reduce((o, p) => {
-  o[p.src] = require(`../tmp/md/${p.src}`)
-  return o
-}, {})
+function flatten(l, o) {
+  return l.reduce((o, p) => {
+    if (p.children) {
+      return flatten(p.children, o)
+    }
+    o[p.src] = require(`../tmp/md/${p.src}`)
+    return o
+  }, o || {})
+}
+
+const pages = flatten(pageMap)
 
 class DocsComponent extends Component {
   render() {

@@ -4,19 +4,38 @@ import pageMap from '../page-map'
 
 export default function withDocsSidebar(WrappedComponent) {
   return class extends Component {
-    render() {
+    navLevel(list, name = 'nav') {
       return (
-        <div>
-          <nav>
-            {pageMap.map((p, idx) =>
-              <li key={idx}>
+        <ul>
+          {list.map((p, idx) => {
+            if (p.children) {
+              return (
+                <li>
+                  <span>
+                    {p.name}
+                  </span>
+                  {this.navLevel(p.children, p.name)}
+                </li>
+              )
+            }
+            return (
+              <li key={`${name}-${idx}`}>
                 <Link href={{pathname: '/doc', query: p}} as={`/docs/${p.path}`}>
                   <a>
                     {p.name}
                   </a>
                 </Link>
-              </li>,
-            )}
+              </li>
+            )
+          })}
+        </ul>
+      )
+    }
+    render() {
+      return (
+        <div>
+          <nav>
+            {this.navLevel(pageMap)}
           </nav>
           <section className="content">
             <WrappedComponent {...this.props} />

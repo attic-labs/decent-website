@@ -42,13 +42,19 @@ function copy(from, to) {
   })
 }
 
+function copyPages(pages, out) {
+  return pages.map(p => {
+    if (p.children) {
+      return Promise.all(copyPages(p.children, out))
+    }
+    return copy(path.join(REPO_DIR, p.src), path.join(out, p.src))
+  })
+}
+
 async function updateDocs(pages, out) {
   await fetchNoms()
-  console.log(pages, pages.assets)
-  const copyPages = pages.map(p => copy(path.join(REPO_DIR, p.src), path.join(out, p.src)))
   const copyAssets = pages.assets.map(a => copy(path.join(REPO_DIR, a), path.join(out, a)))
-  await Promise.all(copyPages, copyAssets)
-  return pages
+  return Promise.all(copyPages(pages, out).concat(copyAssets)).then(() => pages)
 }
 
 if (require.main === module) {

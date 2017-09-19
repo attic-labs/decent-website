@@ -1,8 +1,6 @@
 const path = require('path')
 const pageMap = require('./page-map')
 
-const isProd = process.env.NODE_ENV === 'production'
-
 const emitLoader = {
   loader: 'emit-file-loader',
   options: {
@@ -37,7 +35,7 @@ module.exports = {
     config.resolveLoader.modules.push(path.join(__dirname, './loaders'))
     // Set up output
     config.output = config.output || {}
-    config.output.publicPath = 'https://noms.io/decent/'
+    config.output.publicPath = 'https://noms.io/'
     return config
   },
   async exportPathMap() {
@@ -54,5 +52,4 @@ module.exports = {
       '/': {page: '/'},
     })
   },
-  assetPrefix: isProd ? '/decent' : '',
 }
