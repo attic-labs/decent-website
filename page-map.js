@@ -46,7 +46,7 @@ const pageList = [
             path: 'decent/quickstart',
           },
           {
-            name: 'Architectures',
+            name: 'Architecture',
             src: 'doc/decent/architectures.md',
             path: 'decent/architectures',
           },
