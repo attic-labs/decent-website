@@ -4,11 +4,14 @@ import DocsLink from './DocsLink'
 const MIN_OPACITY = 0.1
 const OPACITY_START = 0.4
 
+const getHeight = (id, dfault) => {
+  if (typeof document === 'undefined') return dfault
+  const el = document.getElementById('jumbo')
+  return el ? el.getBoundingClientRect().height : dfault
+}
+
 export default ({top}) => {
-  const height =
-    typeof document === 'undefined'
-      ? 400
-      : document.getElementById('jumbo').getBoundingClientRect().height
+  const height = getHeight('jumbo', 400)
   // Start fade at OPACITY_START % of total height
   const min = height * OPACITY_START
   const completion = Math.max((top - min) / (height - min), 0)
@@ -17,7 +20,7 @@ export default ({top}) => {
   return (
     <section id="jumbo">
       <div style={{opacity, marginBottom: `-${top * 0.6}px`}} className="foreground">
-        <img src="static/logo.png" className="logo" />
+        <img src="/static/logo.png" className="logo" />
         <div className="content">
           <h1>The first database for the decentralized web</h1>
           <span>
@@ -35,7 +38,7 @@ export default ({top}) => {
         #jumbo {
           width: 100%;
           min-height: 60vh;
-          background: url('static/felt.png') fixed;
+          background: url('/static/felt.png') fixed;
           padding: 1rem;
           display: flex;
           justify-content: center;
