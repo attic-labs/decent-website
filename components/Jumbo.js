@@ -1,4 +1,5 @@
 import Button from './Button'
+import DocsLink from './DocsLink'
 
 const MIN_OPACITY = 0.1
 const OPACITY_START = 0.4
@@ -23,9 +24,7 @@ export default ({top}) => {
             Easily build rich, collaborative, multi-user, fully-decentralized applications.
           </span>
           <div className="buttons">
-            <a href="https://github.com/attic-labs/noms/blob/master/doc/decent/how-to-use-noms.md">
-              <Button>Find out more</Button>
-            </a>
+            <DocsLink>Find out more</DocsLink>
             <a href="http://slack.noms.io">
               <Button>Get in touch</Button>
             </a>
