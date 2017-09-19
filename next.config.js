@@ -39,13 +39,13 @@ module.exports = {
     return config
   },
   async exportPathMap() {
-    const pages = pageMap.reduce((o, p) => {
-      o[`/docs/${p.path}`] = {
+    const pages = pageMap(
+      p => ({
         page: '/doc',
         query: p,
-      }
-      return o
-    }, {})
+      }),
+      p => `/docs/${p.path}`,
+    )
 
     // Combine the map of post pages with the decent landing page
     return Object.assign({}, pages, {

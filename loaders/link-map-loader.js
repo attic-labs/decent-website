@@ -1,16 +1,6 @@
 const pageMap = require('../page-map')
 
-function flatten(l, o) {
-  return l.reduce((o, p) => {
-    if (p.children) {
-      return flatten(p.children, o)
-    }
-    o[p.src] = p.path
-    return o
-  }, o || {})
-}
-
-const pageIndex = flatten(pageMap)
+const pageIndex = pageMap(p => p.path)
 
 const mapToLocal = (full, src, hash) => {
   if (process.env.NODE_ENV !== 'production') {

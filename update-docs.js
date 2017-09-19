@@ -54,7 +54,7 @@ function copyPages(pages, out) {
 async function updateDocs(pages, out) {
   await fetchNoms()
   const copyAssets = pages.assets.map(a => copy(path.join(REPO_DIR, a), path.join(out, a)))
-  return Promise.all(copyPages(pages, out).concat(copyAssets)).then(() => pages)
+  return Promise.all(copyPages(pages.pageList, out).concat(copyAssets)).then(() => pages)
 }
 
 if (require.main === module) {

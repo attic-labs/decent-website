@@ -1,4 +1,4 @@
-module.exports = [
+const pageList = [
   {
     name: 'Home',
     src: 'README.md',
@@ -76,6 +76,18 @@ module.exports = [
   },
 ]
 
+function pageMap(op, keyOp, l, o) {
+  return (l || pageList).reduce((o, p) => {
+    if (p.children) {
+      return pageMap(op, keyOp, p.children, o)
+    }
+    o[keyOp ? keyOp(p) : p.src] = op(p)
+    return o
+  }, o || {})
+}
+
+module.exports = pageMap
+module.exports.pageList = pageList
 module.exports.assets = [
   'doc/cli-screencast.png',
   'doc/data-version-control.png',

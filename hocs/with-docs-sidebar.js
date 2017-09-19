@@ -1,6 +1,6 @@
 import {Component} from 'react'
 import Link from 'next/link'
-import pageMap from '../page-map'
+import {pageList} from '../page-map'
 import Hamburger from '../svg/hamburger.svg'
 
 const NAV_WIDTH = 200
@@ -85,7 +85,7 @@ export default function withDocsSidebar(WrappedComponent) {
         <div className="outer">
           <nav>
             <div>
-              {this.navLevel(pageMap)}
+              {this.navLevel(pageList)}
             </div>
           </nav>
           <section style={containerStyles} className="container">
