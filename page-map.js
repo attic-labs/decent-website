@@ -46,6 +46,11 @@ const pageList = [
             path: 'decent/quickstart',
           },
           {
+            name: 'Architectures',
+            src: 'doc/decent/architectures.md',
+            path: 'decent/architectures',
+          },
+          {
             name: 'Demos',
             children: [
               {
@@ -90,6 +95,8 @@ module.exports = pageMap
 module.exports.pageList = pageList
 module.exports.assets = [
   'doc/cli-screencast.png',
+  'doc/decent/dist-arch.png',
+  'doc/decent/p2p-arch.png',
   'doc/data-version-control.png',
   'doc/nommy_cropped_smaller.png',
   'doc/splore.png',
