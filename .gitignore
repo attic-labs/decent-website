@@ -1,6 +1,7 @@
 # build output
 out
 .next
+tmp
 
 # dependencies
 node_modules
