@@ -8,7 +8,7 @@
     "dev": "next",
     "clean": "rm -rf out .next",
     "precommit": "lint-staged",
-    "preexport": "npm run clean && NODE_ENV=production next build",
+    "preexport": "npm run clean && node update-docs && NODE_ENV=production next build",
     "export": "next export",
     "test": "xo"
   },

@@ -47,9 +47,9 @@ module.exports = {
       return o
     }, {})
 
-    // Combine the map of post pages with the home
+    // Combine the map of post pages with the decent landing page
     return Object.assign({}, pages, {
-      '/': {page: '/'},
+      '/decent': {page: '/decent'},
     })
   },
 }
