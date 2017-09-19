@@ -36,6 +36,11 @@ module.exports = [
         name: 'Decentralization',
         children: [
           {
+            name: 'About',
+            src: 'doc/decent/about.md',
+            path: 'decent/about',
+          },
+          {
             name: 'Quickstart',
             src: 'doc/decent/quickstart.md',
             path: 'decent/quickstart',

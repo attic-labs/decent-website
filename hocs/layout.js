@@ -1,5 +1,7 @@
+import ReactDOM from 'react-dom'
 import {Component} from 'react'
 import Head from 'next/head'
+import hljs from 'highlight.js'
 
 export default function layout(WrappedComponent, title) {
   return class extends Component {
@@ -10,6 +12,7 @@ export default function layout(WrappedComponent, title) {
     }
     componentDidMount() {
       window.addEventListener('scroll', this.handleScroll)
+      this.highlightCode()
     }
     componentWillUnmount() {
       window.removeEventListener('scroll', this.handleScroll)
@@ -17,6 +20,17 @@ export default function layout(WrappedComponent, title) {
     handleScroll() {
       const pageY = window.pageYOffset
       window.requestAnimationFrame(() => this.setState({pageY}))
+    }
+    componentDidUpdate() {
+      this.highlightCode()
+    }
+    highlightCode() {
+      const domNode = ReactDOM.findDOMNode(this)
+      const nodes = domNode.querySelectorAll('pre code')
+      let i
+      for (i = 0; i < nodes.length; i++) {
+        hljs.highlightBlock(nodes[i])
+      }
     }
     render() {
       return (
@@ -28,6 +42,10 @@ export default function layout(WrappedComponent, title) {
             <link
               href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
               rel="stylesheet"
+            />
+            <link
+              rel="stylesheet"
+              href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css"
             />
             <link
               rel="apple-touch-icon-precomposed"

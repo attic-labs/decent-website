@@ -137,7 +137,7 @@ export default function withDocsSidebar(WrappedComponent) {
                 background-color: white;
                 z-index: 10;
                 padding: 0;
-                position: relative;
+                position: absolute;
                 transition: left 150ms ease-out;
                 height: 100%;
               }

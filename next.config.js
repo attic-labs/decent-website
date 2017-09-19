@@ -22,8 +22,11 @@ module.exports = {
           loader: 'html-loader',
           options: {
             root: 'https://github.com/attic-labs/noms',
-            attrs: ['img:src', 'link:href'],
+            attrs: ['img:src'],
           },
+        },
+        {
+          loader: 'link-map-loader',
         },
         {
           loader: 'showdown-loader',
