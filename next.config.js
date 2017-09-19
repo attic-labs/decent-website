@@ -33,9 +33,6 @@ module.exports = {
     config.resolveLoader = config.resolveLoader || {}
     config.resolveLoader.modules = config.resolveLoader.modules || []
     config.resolveLoader.modules.push(path.join(__dirname, './loaders'))
-    // Set up output
-    config.output = config.output || {}
-    config.output.publicPath = 'https://noms.io/'
     return config
   },
   async exportPathMap() {

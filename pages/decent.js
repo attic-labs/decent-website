@@ -5,23 +5,8 @@ import Features from '../components/Features'
 import DocsLink from '../components/DocsLink'
 
 class Decent extends Component {
-  constructor() {
-    super()
-    this.state = {pageY: 0}
-  }
-  componentDidMount() {
-    window.addEventListener('scroll', () => this.handleScroll())
-  }
-  componentWillUnmount() {
-    window.removeEventListener('scroll', () => this.handleScroll())
-  }
-  handleScroll() {
-    const pageY = window.pageYOffset
-    this.setState({pageY})
-  }
-
   render() {
-    const {pageY} = this.state
+    const {pageY} = this.props
     return (
       <div>
         <Jumbo top={pageY} />

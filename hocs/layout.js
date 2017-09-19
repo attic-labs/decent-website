@@ -3,6 +3,21 @@ import Head from 'next/head'
 
 export default function layout(WrappedComponent, title) {
   return class extends Component {
+    constructor() {
+      super()
+      this.handleScroll = this.handleScroll.bind(this)
+      this.state = {pageY: 0}
+    }
+    componentDidMount() {
+      window.addEventListener('scroll', this.handleScroll)
+    }
+    componentWillUnmount() {
+      window.removeEventListener('scroll', this.handleScroll)
+    }
+    handleScroll() {
+      const pageY = window.pageYOffset
+      window.requestAnimationFrame(() => this.setState({pageY}))
+    }
     render() {
       return (
         <main>
@@ -68,7 +83,7 @@ export default function layout(WrappedComponent, title) {
             <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
           </Head>
-          <WrappedComponent {...this.props} />
+          <WrappedComponent {...this.props} {...this.state} />
           <style jsx global>{`
             * {
               box-sizing: border-box;
