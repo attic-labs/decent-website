@@ -10,6 +10,7 @@ const converter = new showdown.Converter({
   ghMentions: true,
 })
 converter.setFlavor('github')
+converter.setOption('simpleLineBreaks', false)
 
 module.exports = function(source) {
   this.cacheable()

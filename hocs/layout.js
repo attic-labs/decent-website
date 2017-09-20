@@ -122,6 +122,7 @@ export default function layout(WrappedComponent, title) {
             }
             p {
               margin: 0;
+              margin-bottom: 1em;
             }
             a {
               color: #5fc1cc;
