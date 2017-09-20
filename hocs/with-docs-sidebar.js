@@ -48,17 +48,19 @@ export default function withDocsSidebar(WrappedComponent) {
               )
             }
             const active = p.src === src
-            return (
-              <li className={active ? 'active' : ''} key={`${name}-${idx}`}>
-                {active
-                  ? p.name
-                  : <Link href={{pathname: '/doc', query: p}} as={`/docs/${p.path}`}>
-                      <a>
-                        {p.name}
-                      </a>
-                    </Link>}
+            const key = `${name}-${idx}`
+            const content = (
+              <li className={active ? 'active' : ''} key={key}>
+                {p.name}
               </li>
             )
+            return active
+              ? content
+              : <Link key={key} href={{pathname: '/doc', query: p}} as={`/docs/${p.path}`}>
+                  <a>
+                    {content}
+                  </a>
+                </Link>
           })}
           <style jsx>
             {`
