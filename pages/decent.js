@@ -19,7 +19,7 @@ class Decent extends Component {
               allowFullScreen
             />
           </div>
-          <Features />
+          <Features top={pageY} />
           <div className="bottom-cta">
             <span>
               We are actively seeking people who might like to try noms. If that's you,{' '}

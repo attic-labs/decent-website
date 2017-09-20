@@ -5,8 +5,11 @@ import getBodymovin from '../lib/bodymovin'
 
 // Animations
 import sync from '../animations/sync'
+import users from '../animations/users'
+import lazyLoad from '../animations/lazy-load'
+import search from '../animations/search'
 
-const animations = {sync}
+const animations = {sync, users, 'lazy-load': lazyLoad, search}
 
 export default class Animation extends Component {
   constructor(props) {
@@ -27,6 +30,7 @@ export default class Animation extends Component {
     })
   }
   componentWillUpdate(props) {
+    if (!this._anim) return
     const play = props.playing
     const {playing} = this.props
     if (playing !== play) {
