@@ -44,11 +44,12 @@ module.exports = {
         page: '/doc',
         query: p,
       }),
-      p => `/docs/${p.path}`,
+      p => `/${p.src}`,
     )
 
     // Combine the map of post pages with the decent landing page
     return Object.assign({}, pages, {
+      '/docs': {page: '/doc', query: {src: 'README.md'}},
       '/decent': {page: '/decent'},
     })
   },

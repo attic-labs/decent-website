@@ -10,16 +10,12 @@ const mapToLocal = (full, src, hash) => {
     }
     return `(/doc?src=${src}${hash})`
   }
-  return `(/docs/${pageIndex[src]}${hash})`
+  return `(/${src}${hash})`
 }
 
 const linkMap = [
   {
     pattern: /\(https?:\/\/github.com\/attic-labs\/noms\/blob\/master\/(doc\/[^#?]+?\.md)([^)]*?)\)/gi,
-    replacement: mapToLocal,
-  },
-  {
-    pattern: /\((doc\/[^#?]+?\.md)([^)]*?)\)/gi,
     replacement: mapToLocal,
   },
 ]

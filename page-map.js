@@ -2,32 +2,26 @@ const pageList = [
   {
     name: 'Home',
     src: 'README.md',
-    path: '',
   },
   {
     name: 'Intro to Noms',
     src: 'doc/intro.md',
-    path: 'intro',
   },
   {
     name: 'CLI Tour',
     src: 'doc/cli-tour.md',
-    path: 'cli-tour',
   },
   {
     name: 'FAQ',
     src: 'doc/faq.md',
-    path: 'faq',
   },
   {
     name: 'Go Bindings',
     src: 'doc/go-tour.md',
-    path: 'go-tour',
   },
   {
     name: 'Path Syntax',
     src: 'doc/spelling.md',
-    path: 'path-syntax',
   },
   {
     name: 'Use Cases',
@@ -38,17 +32,14 @@ const pageList = [
           {
             name: 'About',
             src: 'doc/decent/about.md',
-            path: 'decent/about',
           },
           {
             name: 'Quickstart',
             src: 'doc/decent/quickstart.md',
-            path: 'decent/quickstart',
           },
           {
             name: 'Architecture',
             src: 'doc/decent/architectures.md',
-            path: 'decent/architectures',
           },
           {
             name: 'Demos',
@@ -56,12 +47,10 @@ const pageList = [
               {
                 name: 'P2P Chat',
                 src: 'doc/decent/demo-p2p-chat.md',
-                path: 'decent/demos/p2p-chat',
               },
               {
                 name: 'IPFS Chat',
                 src: 'doc/decent/demo-ipfs-chat.md',
-                path: 'decent/demos/ipfs-chat',
               },
             ],
           },
@@ -73,7 +62,6 @@ const pageList = [
           {
             name: 'About',
             src: 'doc/olap/about.md',
-            path: 'olap/about',
           },
         ],
       },

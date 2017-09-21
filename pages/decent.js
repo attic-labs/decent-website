@@ -49,6 +49,9 @@ class Decent extends Component {
           main {
             min-height: 100%;
           }
+          :global(body) {
+            color: #676767;
+          }
           .content {
             position: relative;
             background-color: white;
