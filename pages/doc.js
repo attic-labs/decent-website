@@ -8,7 +8,16 @@ const pages = pageMap(p => require(`../tmp/md/${p.src}`))
 class DocsComponent extends Component {
   render() {
     const {body} = this.props
-    return <div dangerouslySetInnerHTML={{__html: body}} />
+    return (
+      <div>
+        <div id="doc" dangerouslySetInnerHTML={{__html: body}} />
+        <style jsx global>{`
+          #doc img {
+            max-width: 100%;
+          }
+        `}</style>
+      </div>
+    )
   }
 }
 
