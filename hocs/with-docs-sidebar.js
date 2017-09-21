@@ -114,7 +114,7 @@ export default function withDocsSidebar(WrappedComponent) {
       return (
         <div className="outer">
           <nav>
-            <div>
+            <div className={showingNav ? 'visible' : ''}>
               {this.navLevel(pageList)}
             </div>
           </nav>
@@ -131,14 +131,6 @@ export default function withDocsSidebar(WrappedComponent) {
           </section>
           <style jsx>
             {`
-              .outer {
-                overflow: hidden;
-                position: absolute;
-                top: 0;
-                right: 0;
-                left: 0;
-                height: 100%;
-              }
               nav {
                 z-index: 0;
               }
@@ -149,20 +141,26 @@ export default function withDocsSidebar(WrappedComponent) {
                 overflow-y: auto;
                 height: 100%;
                 padding: 10px;
+                opacity: 0;
+                transition: all 150ms ease-out;
+                margin-left: -30px;
+              }
+              nav .visible {
+                opacity: 1;
+                margin-left: 0;
               }
               .nav-button {
                 padding: 1em;
                 display: block;
                 opacity: 0.4;
-                transition: opacity 400ms ease-out;
+                transition: opacity 300ms ease-out;
                 position: fixed;
               }
               .nav-button.active {
                 opacity: 1;
               }
               .container {
-                overflow: hidden;
-                overflow-y: auto;
+                overflow-x: auto;
                 top: 0;
                 right: 0;
                 background-color: white;
@@ -170,7 +168,6 @@ export default function withDocsSidebar(WrappedComponent) {
                 padding: 0;
                 position: absolute;
                 transition: left 150ms ease-out;
-                height: 100%;
               }
               .content {
                 padding: 4em 12vw;
