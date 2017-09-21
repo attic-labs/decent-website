@@ -1,7 +1,9 @@
 import {Component} from 'react'
 import Link from 'next/link'
 import {pageList} from '../page-map'
+import {colors} from '../styles'
 import Hamburger from '../svg/hamburger.svg'
+import Active from '../svg/active.svg'
 
 const NAV_WIDTH = 200
 
@@ -40,7 +42,7 @@ export default function withDocsSidebar(WrappedComponent) {
             if (p.children) {
               return (
                 <li key={idx}>
-                  <span>
+                  <span className="section">
                     {p.name}
                   </span>
                   {this.navLevel(p.children, p.name)}
@@ -51,7 +53,10 @@ export default function withDocsSidebar(WrappedComponent) {
             const key = `${name}-${idx}`
             const content = (
               <li className={active ? 'active' : ''} key={key}>
-                {p.name}
+                {active ? <Active className="active-icon" width={10} /> : null}
+                <span>
+                  {p.name}
+                </span>
               </li>
             )
             return active
@@ -64,16 +69,39 @@ export default function withDocsSidebar(WrappedComponent) {
           })}
           <style jsx>
             {`
+              :global(.active-icon) {
+                margin-left: -15px;
+                margin-right: 5px;
+                animation-duration: 200ms;
+                animation-name: slidein;
+                animation-iteration-count: 1;
+              }
+              @keyframes slidein {
+                from {
+                  margin-left: -50px;
+                  margin-right: 40px;
+                }
+                to {
+                  margin-left: -15px;
+                  margin-right: 5px;
+                }
+              }
               ul {
                 padding: 0;
                 margin: 0;
                 list-style-type: none;
+                font-weight: 400;
+              }
+              :global(.section) {
+                margin-top: 0.5em;
+                display: inline-block;
               }
               li {
-                padding: 0.5em;
+                margin: 0.5em;
               }
-              .active {
-                background-color: #fbe5d0;
+              li.active {
+                display: flex;
+                align-items: center;
               }
             `}
           </style>
@@ -120,6 +148,7 @@ export default function withDocsSidebar(WrappedComponent) {
                 overflow-x: hidden;
                 overflow-y: auto;
                 height: 100%;
+                padding: 10px;
               }
               .nav-button {
                 padding: 1em;
@@ -149,6 +178,28 @@ export default function withDocsSidebar(WrappedComponent) {
               }
             `}
           </style>
+          <style jsx global>{`
+            body {
+              font-family: 'Open Sans', sans-serif;
+              font-size: 18px;
+              font-weight: 200;
+              line-height: 1.5em;
+              margin: 0;
+              padding: 0;
+              color: #333333;
+            }
+            h2 {
+              font-family: 'Open Sans', sans-serif;
+              font-size: 24px;
+              font-weight: 200;
+              line-height: 1.3em;
+              padding-top: 18px;
+              color: ${colors.ORANGE};
+            }
+            p {
+              font-size: 14px;
+            }
+          `}</style>
         </div>
       )
     }
