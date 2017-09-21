@@ -1,9 +1,6 @@
-import Link from 'next/link'
 import Button from './Button'
 
 export default props =>
-  <Link href={{pathname: '/doc', query: {src: 'doc/decent/about.md'}}} as={`/docs/decent/about`}>
-    <a>
-      <Button {...props} />
-    </a>
-  </Link>
+  <a href="https://github.com/attic-labs/noms/blob/master/doc/decent/about.md">
+    <Button {...props} />
+  </a>
