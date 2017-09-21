@@ -19,11 +19,23 @@ class Decent extends Component {
               allowFullScreen
             />
           </div>
+          <div style={{textAlign: 'center', marginBottom: '4em', fontWeight: 100}}>
+            Noms comes included with the features you need to build sophisticated decentralized
+            applications, without the cost and complexity of blockchains.
+          </div>
           <Features top={pageY} />
           <div className="bottom-cta">
-            <span>
-              We are actively seeking people who might like to try noms. If that's you,{' '}
-              <a href="http://slack.noms.io">please get in touch.</a>
+            <span
+              style={{textAlign: 'center', fontSize: '100%', marginBottom: '3em', fontWeight: 200}}
+            >
+              <p>
+                Are you building a decentralized app? Looking for a way to avoid putting the entire
+                thing on-chain?
+              </p>
+              <p>
+                <a href="https://github.com/attic-labs/noms#contact-us">Please get in touch</a>.
+                We'd like to help!
+              </p>
             </span>
             <DocsLink orange>
               Read more about <strong>noms</strong>

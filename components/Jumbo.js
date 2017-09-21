@@ -24,7 +24,7 @@ export default ({top}) => {
         <div className="content">
           <h1>The first database for the decentralized web</h1>
           <span>
-            Easily build rich, collaborative, multi-user, fully-decentralized applications.
+            Build rich, collaborative, fully-decentralized applications without blockchains
           </span>
           <div className="buttons">
             <DocsLink>Find out more</DocsLink>
