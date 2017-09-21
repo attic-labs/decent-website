@@ -185,13 +185,18 @@ export default function withDocsSidebar(WrappedComponent) {
               padding: 0;
               color: #333333;
             }
-            h2 {
+            h1,
+            h2,
+            h3 {
               font-family: 'Open Sans', sans-serif;
               font-size: 24px;
               font-weight: 200;
               line-height: 1.3em;
               padding-top: 18px;
               color: ${colors.ORANGE};
+            }
+            h1 {
+              font-size: 32px;
             }
             p {
               font-size: 14px;
