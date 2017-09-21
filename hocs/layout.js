@@ -100,6 +100,19 @@ export default function layout(WrappedComponent, title) {
             <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
             <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:site" content="@nomsdb" />
+            <meta name="twitter:creator" content="@aboodman" />
+            <meta
+              name="twitter:title"
+              content="Noms: The first database for the decentralized web"
+            />
+            <meta
+              name="twitter:description"
+              content="Build rich, collaborative, fully-decentralized applications without blockchains"
+            />
+            <meta name="twitter:image" content="https://i.imgur.com/T32k2nV.png" />
           </Head>
           <WrappedComponent {...this.props} {...this.state} />
           <style jsx global>{`
