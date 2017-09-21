@@ -61,7 +61,7 @@ export default function withDocsSidebar(WrappedComponent) {
             )
             return active
               ? content
-              : <Link key={key} href={{pathname: '/doc', query: p}} as={`/docs/${p.path}`}>
+              : <Link key={key} href={{pathname: '/doc', query: p}} as={`/${p.src}`}>
                   <a>
                     {content}
                   </a>
@@ -90,7 +90,6 @@ export default function withDocsSidebar(WrappedComponent) {
                 padding: 0;
                 margin: 0;
                 list-style-type: none;
-                font-weight: 400;
               }
               :global(.section) {
                 margin-top: 0.5em;
@@ -144,6 +143,7 @@ export default function withDocsSidebar(WrappedComponent) {
                 opacity: 0;
                 transition: all 150ms ease-out;
                 margin-left: -30px;
+                background-color: #f4f4f5;
               }
               nav .visible {
                 opacity: 1;
@@ -170,7 +170,7 @@ export default function withDocsSidebar(WrappedComponent) {
                 transition: left 150ms ease-out;
               }
               .content {
-                padding: 4em 12vw;
+                padding: 2em 10vw;
                 min-width: 330px;
               }
             `}
@@ -178,7 +178,7 @@ export default function withDocsSidebar(WrappedComponent) {
           <style jsx global>{`
             body {
               font-family: 'Open Sans', sans-serif;
-              font-size: 18px;
+              font-size: 14px;
               font-weight: 200;
               line-height: 1.5em;
               margin: 0;
@@ -198,8 +198,8 @@ export default function withDocsSidebar(WrappedComponent) {
             h1 {
               font-size: 32px;
             }
-            p {
-              font-size: 14px;
+            strong {
+              font-weight: 600;
             }
           `}</style>
         </div>

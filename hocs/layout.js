@@ -124,7 +124,6 @@ export default function layout(WrappedComponent, title) {
             }
             body {
               font-family: 'Open Sans', sans-serif;
-              color: #676767;
               margin: 0;
             }
             body,
